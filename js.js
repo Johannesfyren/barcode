@@ -2,17 +2,17 @@
 const submitButton = document.querySelector("#submit-barcode");
 const displayResult = document.querySelector("#barcode-mask-result");
 const productNumber = document.querySelector("#product-number");
+
+
+
+
 submitButton.addEventListener("click",()=>{ 
     const input = document.querySelector("#number-input").value;
-    displayResult.textContent = getMask(input);
-    productNumber.textContent = displayProductNumber(input);
+    displayResult.textContent = `Maske:${getMask(input)}`;
+    productNumber.textContent = `Varenummer:${displayProductNumber(input)}`;
 });
 
-
-    
-
-   
-      
+  
   
 function getMask(string){
     let stringCount;
