@@ -36,3 +36,24 @@
 .container-results > :first-child{
     margin: 20px 0;
 }
+.stregkode-tabel{
+    min-width: 500px;
+    border-collapse: collapse;
+    
+}
+.table-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+   
+}
+table, th, td, tr, thead, tbody{
+    padding: 10px;
+    
+}
+th{
+    background-color: aqua;
+}
+tr:nth-child(odd) {
+background-color: rgb(236, 236, 236);
+}

@@ -2,6 +2,8 @@
 const submitButton = document.querySelector("#submit-barcode");
 const displayResult = document.querySelector("#barcode-mask-result");
 const productNumber = document.querySelector("#product-number");
+const barcodeTable = document.querySelector(".stregkode-tabel");
+const test=  "TEST";
 
 
 
@@ -10,6 +12,7 @@ submitButton.addEventListener("click",()=>{
     const input = document.querySelector("#number-input").value;
     displayResult.textContent = `Maske:${getMask(input)}`;
     productNumber.textContent = `Varenummer:${displayProductNumber(input)}`;
+    addRow(barcodeTable);
 });
 
   
@@ -75,4 +78,25 @@ function getMask(string){
     
 function displayProductNumber(barcode){
     return barcode.slice(9,15);
+}
+
+function addRow(tableID) {
+    // Get a reference to the table
+    let tableRef = tableID;
+  
+    // Insert a row at the end of the table
+    let newRow = tableRef.insertRow(-1);
+  
+    // Insert a cell in the row at index 0
+    let newCell = newRow.insertCell(0);
+    let newCell2 = newRow.insertCell(1);
+    let newCell3 = newRow.insertCell(2);
+  
+    // Append a text node to the cell
+    let newText = document.createTextNode(document.querySelector("#number-input").value);
+    let newText2 = document.createTextNode(displayResult.textContent.slice(6));
+    let newText3 = document.createTextNode(productNumber.textContent.slice(11));
+    newCell.appendChild(newText);
+    newCell2.appendChild(newText2);
+    newCell3.appendChild(newText3);
 }
